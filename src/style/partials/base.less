@@ -1,0 +1,61 @@
+/*------------------------------------*\
+    BASE ELEMENTS
+\*------------------------------------*/
+
+/* Helper classes */
+
+.cl:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Links */
+
+.link {
+  text-decoration: none;
+
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+}
+
+.arrow {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+
+  &::before,
+  &::after  {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 2px;
+    background-color: @color-bg-light;
+    border-radius: 30%;
+    transform: rotate(45deg);
+
+    @media screen and (min-width: @screen-sm-min) {
+      width: 12px;
+      height: 4px;
+    }
+
+    @media screen and (min-width: @screen-md-min) {
+      width: 24px;
+      height: 8px;
+    }
+  }
+
+  &::after {
+    position: relative;
+    top: 1px;
+    transform: rotate(-45deg);
+
+    @media screen and (min-width: @screen-md-min) {
+      top: 4px;
+    }
+  }
+}
